@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasicNavigations {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //1. set up the browser driver
 
@@ -21,20 +21,39 @@ public class BasicNavigations {
 
         driver.get("https://www.tesla.com");
 
+        //get the title of the page
+        driver.getTitle();
+        String currentTitle = driver.getTitle();
 
+        //Stop code execution for 3 seconds
 
+        Thread.sleep(3000);
 
+        //use selenium to navigate back
 
+        driver.navigate().back();
 
+        //Stop code execution for 3 seconds
+        Thread.sleep(3000);
 
+        //use selenium to navigate forward
+        driver.navigate().forward();
 
+        //Stop code execution for 3 seconds
+        Thread.sleep(3000);
 
+        //use selenium to navigate refresh
+        driver.navigate().refresh();
 
+        //Stop code execution for 3 seconds
+        Thread.sleep(3000);
 
+        //use navigate().to(): same as .get() method
+        driver.navigate().to("https://www.google.com");
 
-
-
-
+        //System.out.println("driver.getTitle = " + driver.getTitle());
+        //
+        System.out.println("currentTitle = " + currentTitle);
 
 
     }
