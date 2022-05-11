@@ -47,7 +47,7 @@ public class GetText_getAttribute {
             System.out.println("Placeholder text verification FAILED!!!");
         }
 
-        driver.close();
+       driver.close();
 
 
 
