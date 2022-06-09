@@ -56,7 +56,8 @@ public class Driver {
             }
         }
 
-        return driver;
+        return driver;//if driver = null it creates a new one, if it already exists, it returns the existing driver
+        //and do the setups in switch block
 
     }
 
