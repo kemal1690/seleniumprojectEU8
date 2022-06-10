@@ -13,7 +13,8 @@ public class Driver {
        Creating a private constructor, so we are closing
        access to the object of this class from outside the class
         */
-    private Driver(){}
+    private Driver() {
+    }
 
     /*
     We make WebDriver private, because we want to close access from outside the class.
@@ -58,7 +59,17 @@ public class Driver {
 
         return driver;//if driver = null it creates a new one, if it already exists, it returns the existing driver
         //and do the setups in switch block
+    }
+        /*
+    This method will make sure our driver value is always null after using quit() method
+     */
+        public static void closeDriver () {
+            if (driver != null) {
+                driver.quit(); // this line will terminate the existing session. value will not even be null
+                driver = null;
+            }
+        }
 
     }
 
-}
+
